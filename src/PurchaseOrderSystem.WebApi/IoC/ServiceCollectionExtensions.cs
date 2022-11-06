@@ -15,10 +15,10 @@ namespace PurchaseOrderSystem.WebApi.IoC
 
                 options.Map<ArgumentException>(ex => new ProblemDetails()
                 {
-                    Status = 500,
+                    Status = 400,
                     Detail = ex.Message,
-                    Title = "Internal Server Error",
-                    Type = "https://httpstatuses.io/500"
+                    Title = "Bad Request",
+                    Type = "https://httpstatuses.io/400"
                 });
             });
 

@@ -32,7 +32,7 @@ namespace PurchaseOrderSystem.WebApi.Controllers
 
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
-        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> PlaceOrder([FromBody] OrderData order, CancellationToken cancellationToken)
         {
             await _mediator.Send(new PlaceOrderCommand(order), cancellationToken);
